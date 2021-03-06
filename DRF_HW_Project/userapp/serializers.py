@@ -5,4 +5,4 @@ from .models import DefaultUser
 class DefaultUserModelSerializer(HyperlinkedModelSerializer):
     class Meta:
         model = DefaultUser
-        fields = ('uuid', 'mail', 'user_name', 'first_name', 'last_name')
+        fields = ('mail', 'user_name', 'first_name', 'last_name')
