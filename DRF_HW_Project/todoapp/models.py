@@ -13,7 +13,7 @@ class Project(models.Model):
         return self.name
 
 
-class TODO_note(models.Model):
+class ToDoNote(models.Model):
     ACTIVE = 'ACT'
     CLOSED = 'CLD'
 
@@ -22,7 +22,7 @@ class TODO_note(models.Model):
         (CLOSED, 'Closed'),
     ]
 
-    project = models.ForeignKey(Project, on_delete=models.CASCADE)
+    project = models.ForeignKey(Project, related_name="project", on_delete=models.CASCADE)
     text = models.TextField()
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
