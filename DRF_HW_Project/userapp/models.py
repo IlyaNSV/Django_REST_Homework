@@ -8,3 +8,6 @@ class DefaultUser(models.Model):
     user_name = models.CharField(max_length=64)
     first_name = models.CharField(max_length=64)
     last_name = models.CharField(max_length=64)
+
+    def __str__(self):
+        return self.user_name
