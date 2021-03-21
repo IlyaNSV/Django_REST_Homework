@@ -16,3 +16,5 @@ class ToDoNoteProjectFilter(filters.FilterSet):
     class Meta:
         model = ToDoNote
         fields = ['project', 'created']
+
+
