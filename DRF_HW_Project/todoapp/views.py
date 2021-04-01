@@ -1,5 +1,6 @@
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
+from rest_framework import permissions
 from rest_framework.viewsets import ModelViewSet
 
 from .filters import ProjectFilter, ToDoNoteProjectFilter
@@ -13,6 +14,7 @@ class ProjectModelViewSet(ModelViewSet):
     serializer_class = ProjectModelSerializer
     pagination_class = ProjectListPagination
     filterset_class = ProjectFilter
+    permission_classes = [permissions.IsAuthenticated]
 
 
 class TODONoteModelViewSet(ModelViewSet):
@@ -20,6 +22,7 @@ class TODONoteModelViewSet(ModelViewSet):
     serializer_class = TODONoteModelSerializer
     pagination_class = ToDoNoteListPagination
     filterset_class = ToDoNoteProjectFilter
+    permission_classes = [permissions.IsAuthenticated]
 
     def destroy(self, request, *args, **kwargs):
         note = ToDoNote.objects.get(id=kwargs['pk'])
