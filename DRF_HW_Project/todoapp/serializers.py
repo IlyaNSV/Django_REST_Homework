@@ -20,3 +20,10 @@ class TODONoteModelSerializer(HyperlinkedModelSerializer):
     class Meta:
         model = ToDoNote
         fields = ('__all__')
+
+
+class TODONoteModelSerializerBase(HyperlinkedModelSerializer):
+    class Meta:
+        model = ToDoNote
+        fields = ('__all__')
+
