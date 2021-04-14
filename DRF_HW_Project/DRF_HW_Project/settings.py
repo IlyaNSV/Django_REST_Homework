@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django_filters',
     'corsheaders',
     'drf_yasg',
+    'graphene_django',
     # my apps
     'userapp',
     'todoapp',
@@ -145,4 +146,8 @@ REST_FRAMEWORK = {
         'rest_framework.authentication.TokenAuthentication',
     ],
     'DEFAULT_VERSIONING_CLASS': 'rest_framework.versioning.NamespaceVersioning',
+}
+
+GRAPHENE = {
+    "SCHEMA": "DRF_HW_Project.schema.schema"
 }
